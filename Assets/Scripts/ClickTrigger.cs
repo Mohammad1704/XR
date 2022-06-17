@@ -16,11 +16,14 @@ public class ClickTrigger : MonoBehaviour
 
 	private void Awake()
 	{
+		
+
+		Debug.Log("Awake.cs start");
 		_ai = FindObjectOfType<TicTacToeAI>();
 	}
 
 	private void Start(){
-
+		Debug.Log("clickTrigger.cs start ");
 		_ai.onGameStarted.AddListener(AddReference);
 		_ai.onGameStarted.AddListener(() => SetInputEndabled(true));
 		_ai.onPlayerWin.AddListener((win) => SetInputEndabled(false));  // orginal false 
@@ -39,7 +42,15 @@ public class ClickTrigger : MonoBehaviour
 	private void OnMouseDown()
 	{
 		if(canClick){
-			_ai.PlayerSelects(_myCoordX, _myCoordY);
+			// _ai.PlayerSelects(_myCoordX, _myCoordY);
+			_ai.AiSelects(_myCoordX, _myCoordY);  // try 'else' follow same player method 
+			Debug.Log("OnMouseDown._ai.PlayerSelects  X="+ _myCoordX+ "  Y =" + _myCoordY);
 		}
+		// else
+		// {
+		// 	_ai.AiSelects(_myCoordX, _myCoordY);
+		// Debug.Log("Hello: " + gameObject.name);
+		// }
+	
 	}
 }

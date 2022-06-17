@@ -1,0 +1,22 @@
+ 1- try 'else'
+  
+  2 - X follow same player method: 
+            - track 
+  
+  3 - hint? 'Assets/Scripts/TicTacToeAI.cs(26,14): warning CS0414: The field 'TicTacToeAI._gridSize' is assigned but its value is never used
+4 - do we have the method for Ai WinnerEvent?
+
+
+5 - unity recomnde 
+private IEnumerator OnMouseDown()
+                   	{
+                   		if(canClick){
+                   			_ai.PlayerSelects(_myCoordX, _myCoordY);
+                   			// _ai.AiSelects(_myCoordX, _myCoordY);  // try 'else' follow same player method 
+                   		}
+                   
+                   		return null;
+                   	}
+                   }
+                   
+6 - switch method X to Y , Loop X & Y               

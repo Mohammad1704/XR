@@ -14,7 +14,7 @@ public class WinnerEvent : UnityEvent<int>
 
 public class TicTacToeAI : MonoBehaviour
 {
-
+	
 	int _aiLevel;
 
 	TicTacToeState[,] boardState;
@@ -44,6 +44,7 @@ public class TicTacToeAI : MonoBehaviour
 	
 	private void Awake()
 	{
+		Debug.Log("TicTacToeAI.cs Awake ");
 		if(onPlayerWin == null){
 			onPlayerWin = new WinnerEvent();
 		}
@@ -57,10 +58,12 @@ public class TicTacToeAI : MonoBehaviour
 	public void RegisterTransform(int myCoordX, int myCoordY, ClickTrigger clickTrigger)
 	{
 		_triggers[myCoordX, myCoordY] = clickTrigger;
+		Debug.Log("RegisterTransform  X="+ myCoordX + "  Y =" + myCoordY); 
 	}
 
 	private void StartGame()
 	{
+		Debug.Log("TicTacToeAI.StartGame() ");
 		_triggers = new ClickTrigger[3,3];
 		onGameStarted.Invoke();
 	}
@@ -83,4 +86,9 @@ public class TicTacToeAI : MonoBehaviour
 			Quaternion.identity
 		);
 	}
+
+	// public void _isPlayerTurn ()
+	// {
+	// 	
+	// }
 }

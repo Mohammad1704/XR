@@ -9,6 +9,7 @@ public class RetryButton : MonoBehaviour
 {
 	private void Awake()
 	{
+		Debug.Log("RetryButton.cs start ");
 		GetComponent<Button>().onClick.AddListener(Retry);
 	}
 
